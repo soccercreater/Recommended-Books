@@ -1,32 +1,43 @@
 # Recommended Books
 
-## Site Overview
-A site where you can introduce and share your thoughts about recommended books.
+## サイト概要
+ 　読んだ本に対してレヴューを入力し、その情報を共有できるサイトです！
+ 　その本のおすすめ度や、どのような人に対して読んでほしいのかが１目で分かります！今まで「買ったはいいけ
+ ど面白くなかった」、「忙しくて読むことができなかった」といったといった経験はないでしょうか？このサイト
+ は、そういった出来事を最小限にするとともに、ニーズにあった最高の１冊に出会う手助けをすることができます。
+  本に興味はあるが、何を読んでいいのか分からない方や、今需要がある本を調べたい企業に対しても活用して頂
+けると思います。
 
-### Site theme
-Share the books you've read
+### サイトテーマ
+ レヴューサイト「オススメの本について共有できるサイト」
 
-### Why I chose the theme.
-We wanted to help readers find books that meet their needs by allowing everyone to share their thoughts on books they have read.
-I wanted to make it easier for readers to find books that meet their needs.
-
-### Target Users
-People who love books, people who are interested in books but have difficulty reading them due to lack of time.
-
-### Main usage scenarios
-You want to read a book, but there are so many similar books that you don't know where to start.
-When you want to share the books you read with someone.
-
-## design specifications
+### テーマを選んだ理由。
+　これまで読んだことがある本に対しての感想を誰もが共有できるようにすることで、読者のニーズにあった本
+を簡単に見つけることができるようにしたいと考えたからです。
+ 新型コロナウイルス感染症によって、直接顔を合わして会話することが難しい状況であり、外出を控えている方が
+ほとんどであると思います。しかし、本はいつでもどこでも、楽しくて魅力的な世界に連れていってくれます。
+ 本を通じて、一人でも多くの人がお互いのオススメの本を共有できる一助になれば幸いです。
 
 
-## List of challenge elements
+### ターゲットユーザ
+本が好きな人、本に興味はあるが時間がなくて読むことが難しい人。
+
+### 主な利用シーン
+本を読みたいけれど、似たような本が多すぎて何から読めば分からない時。
+読んだ本を誰かと共有したいと考えた時。
+
+## 設計書
+
+
+## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1BNwBXj44KbaJ4vaQN41YN_Jtwwt4rMDGKLxesgC2hJY/edit?usp=sharing
-
-## Development Environment
+## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 使用素材
+-
 
