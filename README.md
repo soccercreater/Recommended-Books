@@ -21,7 +21,7 @@ When you want to share the books you read with someone.
 
 
 ## List of challenge elements
-https://docs.google.com/spreadsheets/d/1BNwBXj44KbaJ4vaQN41YN_Jtwwt4rMDGKLxesgC2hJY/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1BNwBXj44KbaJ4vaQN41YN_Jtwwt4rMDGKLxesgC2hJY/edit#gid=0
 
 ## Development Environment
 - OS：Linux(CentOS)
