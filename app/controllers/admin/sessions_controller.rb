@@ -1,6 +1,22 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
+  before_action :configure_sign_in_params, only: [:create]
+
+  # GET /resource/sign_in
+  # def new
+  #   super
+  # end
+
+  # POST /resource/sign_in
+  def create
+    super
+  end
+
+  # DELETE /resource/sign_out
+  # def destroy
+  #   super
+  # end
   protected
   def after_sign_in_path_for(resource)
     admin_users_path
@@ -9,22 +25,7 @@ class Admin::SessionsController < Devise::SessionsController
   def after_sign_out_path_for(resource)
     new_user_session_path
   end
-  # before_action :configure_sign_in_params, only: [:create]
 
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
-
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
-
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
 
   # protected
 
@@ -32,4 +33,8 @@ class Admin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  def configure_sign_in_params
+     devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
+  end
 end

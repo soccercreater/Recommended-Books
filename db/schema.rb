@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2022_02_28_083203) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name"
+    t.integer "age"
     t.date "birthdate"
     t.string "sex"
     t.string "profile_image"
