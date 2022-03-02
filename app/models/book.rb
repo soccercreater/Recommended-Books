@@ -8,5 +8,9 @@ class Book < ApplicationRecord
     has_many :assessments
 
     has_one_attached :image
+
+    def self.search(keyword)
+     where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
+    end
 end
 

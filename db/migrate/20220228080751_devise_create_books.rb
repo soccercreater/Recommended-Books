@@ -7,6 +7,7 @@ class DeviseCreateBooks < ActiveRecord::Migration[6.1]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :title
+      t.string :body
       t.string :author
       t.integer :isbn
       t.date :publication_date

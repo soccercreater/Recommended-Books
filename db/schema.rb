@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_02_28_083203) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "title"
+    t.string "body"
     t.string "author"
     t.integer "isbn"
     t.date "publication_date"

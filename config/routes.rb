@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   root to: "public/homes#top"
   get "/about" => "public/homes#about", as: "about"
-
   scope module: :public do
+    get 'search' => 'books#search'
      delete "/books/:id/destroy" => "books#destroy", as: "destroy"
      delete "/books/destroy_all" => "books#destroy_all", as: "destroy_all"
    resources :books, only: [:show, :new, :index, :edit]

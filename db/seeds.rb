@@ -9,3 +9,5 @@ Admin.create!(
    email: 'admin@admin',
    password: '111111'
 )
+
+Book.create!(id: 1, title: 'team_geek', author: 'ヴィトン.サーフ')

@@ -1,2 +1,7 @@
-<h1>Public::Assessments#new</h1>
-<p>Find me in app/views/public/assessments/new.html.erb</p>
+<h4>読んだ本の登録</h4>
+   <%= form_with model: @assessment,id: 'new_assessment', class: 'new_assessment', local: true do |f| %>
+  <h4>
+   <%= f.text_area :comment %>
+  <h4>
+   <%= f.submit "内容を保存" %>
+<% end %>
