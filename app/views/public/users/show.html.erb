@@ -1,7 +1,8 @@
 <table class="table">
   <thead>
    <h2>マイページ</h2>
-     登録情報<%= link_to "編集する",edit_user_path(current_user.id) %>
+     登録情報<%= link_to "編集する",edit_user_path(@user.id) %>
+     <th scope="col">画像</th>
      <th scope="col">名前</th>
      <th>性別</th>
      <th>生年月日</th>
@@ -9,12 +10,17 @@
      <th>メールアドレス</th>
      <th>会員ステータス</th>
       <tr>
-       <th scope="col"><%= current_user.name %></th>
-       <th scope="col"><%= current_user.sex %></th>
-       <th scope="col"><%= current_user.birthdate %></th>
-       <th scope="col"><%= current_user.age %></th>
-       <th scope="col"><%= current_user.email %></th>
-       <th scope="col"><%= current_user.is_active %></th>
+       <% if @user.image.attached? %>
+       <th scope="col"><%= image_tag @user.image, size: "100x100" %></th>
+        <% else %>
+       <th scope="col"><%= image_tag 'no_image', size: "100x100" %></th>
+        <% end %>
+       <th scope="col"><%= @user.name %></th>
+       <th scope="col"><%= @user.sex %></th>
+       <th scope="col"><%= @user.birthdate %></th>
+       <th scope="col"><%= @user.age %></th>
+       <th scope="col"><%= @user.email %></th>
+       <th scope="col"><%= @user.is_active %></th>
       </tr>
    </thead>
   <tbody>

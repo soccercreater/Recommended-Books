@@ -6,5 +6,7 @@ class Book < ApplicationRecord
 
     belongs_to :user
     has_many :assessments
+
+    has_one_attached :image
 end
 

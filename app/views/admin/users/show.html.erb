@@ -1,5 +1,11 @@
 <h4>会員詳細画面</h4>
 <div>
+  <p>画像</p>
+   <% if @user.image.attached? %>
+    <%= image_tag @user.image, size: "100x100" %>
+   <% else %>
+    <%= image_tag 'no_image', size: "100x100" %>
+   <% end %>
   <p>会員ID<%= @user.id %></p>
   <p>名前<%= @user.name %></p>
   <p>性別<%= @user.sex %>
