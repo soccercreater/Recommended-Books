@@ -1,2 +1,18 @@
-<h1>Admin::Users#edit</h1>
-<p>Find me in app/views/admin/users/edit.html.erb</p>
+<h4>会員編集画面</h4>
+ <%= form_with model: @user,url: admin_user_path(@user.id), method: :patch, local: true do |f| %>
+   <h4>名前</h4>
+  <%= f.text_field :name %>
+   <h4>性別</h4>
+  <%= f.text_field :sex %>
+   <h4>生年月日</h4>
+  <%= f.text_field :birthdate %>
+   <h4>年齢</h4>
+  <%= f.text_field :age %>
+   <h4>メールアドレス</h4>
+  <%= f.text_field :email %>
+   <h4>会員ステータス</h4>
+  <%= f.text_field :is_active %>
+
+
+ <%= f.submit '変更を保存する' %>
+ <% end %>

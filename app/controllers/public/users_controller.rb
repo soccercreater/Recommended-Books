@@ -8,7 +8,6 @@ class Public::UsersController < ApplicationController
   end
 
   def update
-    @user = User.new
     @user = current_user
     @user.update(user_params)
     redirect_to my_page_path(current_user.id)

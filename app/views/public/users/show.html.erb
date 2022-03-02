@@ -7,13 +7,14 @@
      <th>生年月日</th>
      <th>年齢</th>
      <th>メールアドレス</th>
-     <th></th>
+     <th>会員ステータス</th>
       <tr>
        <th scope="col"><%= current_user.name %></th>
        <th scope="col"><%= current_user.sex %></th>
        <th scope="col"><%= current_user.birthdate %></th>
        <th scope="col"><%= current_user.age %></th>
        <th scope="col"><%= current_user.email %></th>
+       <th scope="col"><%= current_user.is_active %></th>
       </tr>
    </thead>
   <tbody>
