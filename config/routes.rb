@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get 'search' => 'books#search'
      delete "/books/:id/destroy" => "books#destroy", as: "destroy"
      delete "/books/destroy_all" => "books#destroy_all", as: "destroy_all"
-   resources :books, only: [:show, :new, :index, :edit]
+   resources :books, only: [:show, :new, :index, :edit, :create]
      get "my_page" => "users#show", as: "my_page"
      get "/users/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
      patch "/users/withdraw" => "users#withdraw", as: "withdraw"
