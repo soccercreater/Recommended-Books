@@ -19,7 +19,11 @@ Rails.application.routes.draw do
      get "my_page" => "users#show", as: "my_page"
      get "/users/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
      patch "/users/withdraw" => "users#withdraw", as: "withdraw"
-   resources :users, only: [:show, :edit, :update]
+   resources :users, only: [:show, :edit, :update] do
+      collection do
+      get 'search'
+    end
+  end
      delete "/assessments/:id/destroy" => "assessments#destroy", as: "destroy_assessment"
    resources :assessments, only: [:new, :update, :create]
    resources :posts, only: [:new]

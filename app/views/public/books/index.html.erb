@@ -1,13 +1,25 @@
+
+<% if @books.present? %>
+  <% @books.each do |book| %>
+    <%= book.image %>
+    <%= book.id %>
+    <%= book.title %>
+    <%= book.author %>
+  <% end %>
+<% else %>
+  <p>検索結果はありません</p>
+<% end %>
+
+
 <h4>読みたい本を検索する</h4>
-<%= form_with url: search_path, method: :get, local: true do |f| %>
+<%= form_with method: :get, local: true do |f| %>
   <%= f.text_field :keyword, value: @keyword %>
   <%= f.submit "検索" %>
 <% end %>
 
-<% @books.each do |book| %>
-<%= image_tag book.image, size: "100x100" %>
-<%= book.title %>
-<%= book.author %>
-<% end %>
-
 <%= link_to "登録へ", new_book_path %>
+
+
+
+
+
