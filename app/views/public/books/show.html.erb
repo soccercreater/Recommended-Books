@@ -1,0 +1,10 @@
+  <% if @book.image.attached? %>
+   <%= image_tag @book.image, size: "100x100" %></th>
+  <% else %>
+   <%= image_tag 'book', size: "100x100" %></th>
+  <% end %><br>
+   ID<%= @book.id %><br>
+   本のタイトル<%= @book.title %><br>
+   本の著者<%= @book.author %><br>
+<%= link_to "一覧画面へ", books_path %><br>
+<%= link_to "コメントを書き込む", new_assessment_path %>

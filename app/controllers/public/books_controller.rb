@@ -1,37 +1,19 @@
 class Public::BooksController < ApplicationController
 
-  # before_action :search
-
-  # def search
-  #   # params[:q]のqには検索フォームに入力した値が入る
-  #   @q = Book.ransack(params[:q])
-  # end
-
   def index
-    # distinct: trueは重複したデータを除外
     if params[:keyword].present?
      @books = Book.search(params[:keyword])
     else
-     @books = Book.all
+     @books = Book.page(params[:page])
     end
-    # @books = @q.result(distinct: true)
   end
-
-  # def search
-  #   @books = Book.search(params[:keyword])
-  #   @keyword = params[:keyword]
-  #   render "index"
-  # end
-
-  # def index
-  #   @books = Book.all
-  # end
 
   def edit
   end
 
   def show
     @book = Book.find(params[:id])
+    @book_assessment = Assessment.new
   end
 
   def new
@@ -40,7 +22,7 @@ class Public::BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.user_id = current_user_id
+    @book.user_id = current_user.id
     @book.save!
     pp @book
     redirect_to books_path
@@ -49,7 +31,7 @@ class Public::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:image, :book_image, :title, :author)
+    params.require(:book).permit(:image, :book_image, :title, :body, :author)
   end
 
 end
