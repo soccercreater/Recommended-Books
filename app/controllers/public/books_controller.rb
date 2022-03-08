@@ -6,6 +6,7 @@ class Public::BooksController < ApplicationController
     else
      @books = Book.page(params[:page])
     end
+     @books = @books.page(params[:page])
   end
 
   def edit

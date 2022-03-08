@@ -15,7 +15,6 @@
 <% else %>
   <p>検索結果はありません</p>
 <% end %>
-<%= paginate @books %>
 
 
 <h4>読みたい本を検索する</h4>
@@ -27,6 +26,7 @@
 <%= link_to "新規登録画面へ", new_book_path %>
 
 
+<%= paginate @books %>
 
 
 

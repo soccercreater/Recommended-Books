@@ -1,11 +1,16 @@
 class Public::AssessmentsController < ApplicationController
   def new
     @assessment = Assessment.new
+    @book = Book.find(params[:book_id])
   end
 
   def show
     @book = Book.find(params[:id])
-  #   @assessment = @book.id.assessment
+    @assessments = @book.assessments
+  end
+
+  def edit
+    @book = Book.find(params[:book_id])
   end
 
   def update
@@ -17,8 +22,7 @@ class Public::AssessmentsController < ApplicationController
     # @user.book_id = current_user.book.id
     @assessment = Assessment.new(assessment_params)
     @assessment.user_id = current_user.id
-    # @assessment.book_id = current_user.book.id
-    @assessment.save
+    @assessment.save!
     redirect_to books_path
 
     # @assessment = Assessment.new(assessment_params)

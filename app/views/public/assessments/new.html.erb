@@ -1,5 +1,6 @@
 <h4>本に対するコメント</h4>
    <%= form_with model: @assessment,id: 'new_assessment', class: 'new_assessment', local: true do |f| %>
+   <%= f.hidden_field :book_id, :value => @book.id %>
   <h4>
    <%= f.text_area :comment %>
   <h4>

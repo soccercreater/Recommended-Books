@@ -7,4 +7,4 @@
    本のタイトル<%= @book.title %><br>
    本の著者<%= @book.author %><br>
 <%= link_to "一覧画面へ", books_path %><br>
-<%= link_to "コメントを書き込む", new_assessment_path %>
+<%= link_to "読みたい本として登録する", new_post_path(book_id: @book.id) %>

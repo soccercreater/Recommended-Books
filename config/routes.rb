@@ -25,8 +25,8 @@ Rails.application.routes.draw do
     end
   end
      delete "/assessments/:id/destroy" => "assessments#destroy", as: "destroy_assessment"
-   resources :assessments, only: [:new, :update, :create, :show]
-   resources :posts, only: [:new]
+   resources :assessments, only: [:new, :update, :create, :show, :edit]
+   resources :posts, only: [:new, :index, :create]
 
   end
 

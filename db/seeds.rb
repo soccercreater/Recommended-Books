@@ -15,4 +15,9 @@ ActiveRecord::Base.transaction do
    user.save
    user.books.create!( title: 'team_geek', author: 'ヴィトン.サーフ')
    user.books.create!( title: 'ABCD', author: 'ヴィトン.サーフ')
-end
+   user.books.create!( title: 'ruby', author: 'ruby')
+
+   [*(1..100)].each do |index|
+      user.avatar.attach(io: File.open(Rails.root.join("app/assets/images/image_#{index}.jpg"))
+   end
+ end

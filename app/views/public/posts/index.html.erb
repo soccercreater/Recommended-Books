@@ -1,0 +1,16 @@
+<% @books.each do |book| %>
+ <% if book.image.attached? %><br>
+   <%= image_tag book.image, size: "100x100" %></th>
+  <% else %>
+   <%= image_tag 'book', size: "100x100" %></th>
+  <% end %><br>
+   ID<%= book.id %><br>
+   本のタイトル<%= book.title %><br>
+   本の著者<%= book.author %><br>
+   この本を選んだ理由<br>
+   <% book.posts.each do |book_post| %>
+    <%= book_post.reason %>
+   <% end %>
+   <%= link_to "コメントを書く", new_assessment_path(book_id: book.id) %>
+<% end %>
+
