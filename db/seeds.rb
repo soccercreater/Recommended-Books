@@ -19,9 +19,9 @@ ActiveRecord::Base.transaction do
    #[*(1..100)].each do |index|
    #   user.books.book_image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{index}.jpg")))
    #end
-   user.books.each.with_index(1) do |book, iiii|
-      book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{iiii}.jpg")))
-   end
+   # user.books.each.with_index(1) do |book, iiii|
+   #    book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{iiii}.jpg")))
+   # end
 
    # user.books.each do |book|
    #    book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{book.title}.jpg")))
