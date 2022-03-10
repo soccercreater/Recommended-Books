@@ -22,8 +22,12 @@ class Public::PostsController < ApplicationController
     @book_post = Post.new(post_params)
     @post = current_user.posts.new(post_params)
     @post.book_id = @book.id
-    @post.save!
-    redirect_to posts_path
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
+
   end
 
   def edit
@@ -31,7 +35,7 @@ class Public::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:book_id])
+    @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to posts_path
   end

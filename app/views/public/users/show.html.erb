@@ -11,9 +11,9 @@
      <th>会員ステータス</th>
       <tr>
        <% if @user.image.attached? %>
-       <th scope="col"><%= image_tag @user.image, size: "100x100" %></th>
+       <th scope="col"><%= image_tag @user.image, size: "150x150" %></th>
         <% else %>
-       <th scope="col"><%= image_tag 'no_image', size: "100x100" %></th>
+       <th scope="col"><%= image_tag 'no_image', size: "150x150" %></th>
         <% end %>
        <th scope="col"><%= @user.name %></th>
        <th scope="col"><%= @user.sex %></th>
