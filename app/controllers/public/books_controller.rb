@@ -14,7 +14,9 @@ class Public::BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @book_assessment = Assessment.new
+    # @book_assessment = Assessment.where(params[:id])
+    @book_assessments = Assessment.where(book_id: @book.id)
+
   end
 
   def new
@@ -32,7 +34,7 @@ class Public::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:image, :book_image, :title, :body, :author)
+    params.require(:book).permit(:image, :book_image, :title, :body, :author, :comment)
   end
 
 end

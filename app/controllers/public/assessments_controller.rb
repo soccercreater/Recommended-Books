@@ -19,15 +19,16 @@ class Public::AssessmentsController < ApplicationController
   end
 
   def create
-    # @user.book_id = current_user.book.id
     @assessment = Assessment.new(assessment_params)
     @assessment.user_id = current_user.id
     @assessment.save!
     redirect_to books_path
+  end
 
-    # @assessment = Assessment.new(assessment_params)
-    # @assessment.save
-    # redirect_to books_path
+  def destroy
+    @assessment = Assessment.find(params[:id])
+    @assessment.destroy
+    redirect_to books_path
   end
 
   def assessment_params

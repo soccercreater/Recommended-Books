@@ -1,0 +1,6 @@
+<h4>この本を選んだ理由</h4>
+<%= form_with model: @post, local:true do |f| %>
+  <%= f.hidden_field :id, :value => @book.id %>
+  <%= f.text_area :reason %>
+  <%= f.submit '登録' %>
+<% end %>

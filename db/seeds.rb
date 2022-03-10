@@ -15,9 +15,17 @@ ActiveRecord::Base.transaction do
    user.save
    user.books.create!( title: 'team_geek', author: 'ヴィトン.サーフ')
    user.books.create!( title: 'ABCD', author: 'ヴィトン.サーフ')
-   user.books.create!( title: 'ruby', author: 'ruby')
 
-   [*(1..100)].each do |index|
-      user.avatar.attach(io: File.open(Rails.root.join("app/assets/images/image_#{index}.jpg"))
+   #[*(1..100)].each do |index|
+   #   user.books.book_image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{index}.jpg")))
+   #end
+   user.books.each.with_index(1) do |book, iiii|
+      book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{iiii}.jpg")))
    end
- end
+
+   # user.books.each do |book|
+   #    book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{book.title}.jpg")))
+   # end
+
+
+end

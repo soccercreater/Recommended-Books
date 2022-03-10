@@ -6,5 +6,10 @@
    ID<%= @book.id %><br>
    本のタイトル<%= @book.title %><br>
    本の著者<%= @book.author %><br>
+   本のコメント<% @book_assessments.each do |assessment| %>
+   <%= assessment.comment %>
+    <%= link_to "削除", destroy_assessment_path(assessment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+   <% end %>
+   <br>
 <%= link_to "一覧画面へ", books_path %><br>
 <%= link_to "読みたい本として登録する", new_post_path(book_id: @book.id) %>
