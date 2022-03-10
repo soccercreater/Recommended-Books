@@ -1,6 +1,9 @@
 class Public::UsersController < ApplicationController
   def show
     @user = current_user
+    # @book = Book.find(params[:id])
+    # @post = Post.find(params:[:id])
+    # @user.post_id = @post.where(post_id: @user.post_id)
   end
 
   def edit
