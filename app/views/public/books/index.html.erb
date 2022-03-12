@@ -1,4 +1,4 @@
-
+<div class = book>
 <% if @books.present? %>
   <% @books.each do |book| %>
     <% if book.image.attached? %>
@@ -15,6 +15,7 @@
 <% else %>
   <p>検索結果はありません</p>
 <% end %>
+</div>
 
 
 <h4>読みたい本を検索する</h4>

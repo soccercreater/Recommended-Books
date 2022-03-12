@@ -6,87 +6,118 @@
      <%= csrf_meta_tags %>
      <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   </head>
-   <body>
+  <body class="d-flex flex-column vh-100">
+   <%= notice %>
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand" href="/"><span>RecommendedBooks</span></a>
+          <a class="navbar-brand p-3" href="/"><span><i class="fas fa-book-reader"></i>RecommendedBooks</span></a>
            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
            </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-             <ul class="navbar-nav ml-auto">
+              <ul class="navbar-nav ml-auto">
+                <% if user_signed_in? %>
+                 ようこそ、<%= current_user.name %>さん！
+                  <li class="nav-item">
+                   <%= link_to my_page_path, class: 'nav-link text-dark' do %>
+                     <i class="fas fa-home"></i> マイページ
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to books_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-search"></i> 登録本検索（一覧）
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to posts_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-book-open"></i> 登録本一覧
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to unsubscribe_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-running"></i> 退会する
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-sign-out-alt"></i> Log out
+                   <% end %>
+                  </li>
 
-              <% if user_signed_in? %>
-               ようこそ、<%= current_user.name %>さん！
-                <li class="nav-item">
-                 <%= link_to my_page_path, class: 'nav-link text-dark' do %>
-                   <i class="fas fa-home"></i> マイページ
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to books_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-search"></i> 登録本検索（一覧）
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to posts_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-book-open"></i> 登録本一覧
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to unsubscribe_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-running"></i> 退会する
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-sign-out-alt"></i> Log out
-                 <% end %>
-                </li>
+                 <% elsif admin_signed_in? %>
+                  <li class="nav-item">
+                   <%= link_to admin_users_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-user"></i>会員一覧
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-sign-out-alt"></i> Log out
+                   <% end %>
+                  </li>
 
-               <% elsif admin_signed_in? %>
-                <li class="nav-item">
-                 <%= link_to admin_users_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-user"></i>会員一覧
+                 <% else %>
+                  <li class="nav-item">
+                   <%= link_to about_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-link"></i>About
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to books_path, class: 'nav-link text-dark' do %>
+                     <i class="fas fa-search"></i> 登録本検索（一覧）
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to new_user_registration_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-user-plus"></i> Sign up
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to new_user_session_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-sign-in-alt"></i> Log in
+                   <% end %>
+                  </li>
                  <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-sign-out-alt"></i> Log out
-                 <% end %>
-                </li>
-
-               <% else %>
-                <li class="nav-item">
-                 <%= link_to about_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-link"></i>About
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to books_path, class: 'nav-link text-dark' do %>
-                   <i class="fas fa-search"></i> 登録本検索（一覧）
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to new_user_registration_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-user-plus"></i> Sign up
-                 <% end %>
-                </li>
-                <li class="nav-item">
-                 <%= link_to new_user_session_path, class: 'nav-link text-dark' do %>
-                  <i class="fas fa-sign-in-alt"></i> Log in
-                 <% end %>
-                </li>
-               <% end %>
-           </ul>
-          </div>
-         </nav>
+             </ul>
+            </div>
+           </div>
+          </nav>
          </header>
         <main class="mb-auto">
-       <%= yield %>
+         <%= yield %>
+        </main>
+         <footer class="bg-dark text-white pt-5 pb-4">
+            <div class="container">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <i class="fas fa-book-reader"></i><span>recommended_books</span>
+                </div>
+                <div class="col-md-8">
+                  <h6 class="text-white mt-2 mb-3">画像参考サイト https://www.hanmoto.com/</h6>
+                  <ul class="p-0 list-unstyled">
+                    <li>
+                     <div class = "footerr" >
+                       <a href="" title="About" class="text-white-50">
+                        <%= link_to about_path, class: 'nav-link text-light' do %>
+                          recommended_booksとは？
+                        <% end %>
+                       </a>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="" title="License informations" class="text-white-50"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </body>
+      </html>
      </body>
    </html>
