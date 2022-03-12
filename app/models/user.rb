@@ -10,7 +10,4 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
-  # def active_for_authentication?
-  #   super && (is_deleted == false)
-  # end
 end
