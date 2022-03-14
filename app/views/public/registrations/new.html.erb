@@ -1,5 +1,5 @@
-<div class = signup1 >
- <h2>新規会員登録</h2>
+<div>
+ <h2 class="signup1">新規会員登録</h2>
 </div>
   <%= render "public/shared/error_messages", resource: resource %>
    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>

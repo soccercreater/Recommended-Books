@@ -1,33 +1,47 @@
-<div class = book>
-<% if @books.present? %>
-  <% @books.each do |book| %>
-    <% if book.image.attached? %>
-     <%= image_tag book.image, size: "150x150" %>
-    <% else %>
-     <%= image_tag 'book', size: "150x150" %>
-    <% end %>
-      <%= link_to book_path(book.id) do %><br>
-       ID<%= book.id %><br>
+<h4 class = book_index>本一覧</h4>
+ <% if @books.present? %>
+  <table class="table">
+   <thead>
+    <tr>
+     <th class = book_index scope="col">book_image</th>
+     <th class = book_index scope="col">id</th>
+     <th class = book_index scope="col">title</th>
+     <th class = book_index scope="col">author</th>
+    </tr>
+     <% @books.each do |book| %>
+      <tr>
+        <td>
+          <% if book.image.attached? %>
+           <%= image_tag book.image, size: "150x150" %>
+          <% else %>
+           <%= image_tag 'book', size: "150x150" %>
+          <% end %>
+        </td>
+        <td>
+         <%= link_to book_path(book.id) do %><br>
+          <%= book.id %><br>
+         <% end %>
+        </td>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+      </tr>
       <% end %>
-        タイトル<%= book.title %><br>
-        著者名<%= book.author %><br>
-  <% end %>
-<% else %>
-  <p>検索結果はありません</p>
-<% end %>
-</div>
+      <% else %>
+       <p>検索結果はありません</p>
+      <% end %>
+   </table>
 
 
-<h4>読みたい本を検索する</h4>
-<%= form_with method: :get, local: true do |f| %>
-  <%= f.text_field :keyword, value: @keyword %>
-  <%= f.submit "検索" %>
-<% end %>
+      <h4>読みたい本を検索する</h4>
+      <%= form_with method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword %>
+        <%= f.submit "検索" %>
+      <% end %>
 
-<%= link_to "新規登録画面へ", new_book_path %>
+      <%= link_to "新規登録画面へ", new_book_path %>
 
 
-<%= paginate @books %>
+      <%= paginate @books %>
 
 
 
