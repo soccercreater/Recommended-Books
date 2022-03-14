@@ -1,32 +1,32 @@
 <table class="table">
   <thead>
-    <h4>会員一覧</h4>
-     <th scope="col">画像</th>
-     <th>会員ID</th>
-     <th>名前</th>
-     <th>性別</th>
-     <th>生年月日</th>
-     <th>年齢</th>
-     <th>メールアドレス</th>
-     <th>ステータス</th>
+    <h4 class = user_index>会員一覧</h4>
+     <th class = admin_user_content scope="col">user</th>
+     <th class = admin_user_content scope="col">user_ID</th>
+     <th class = admin_user_content scope="col">name</th>
+     <th class = admin_user_content scope="col">sex</th>
+     <th class = admin_user_content scope="col">birthdate</th>
+     <th class = admin_user_content scope="col">old</th>
+     <th class = admin_user_content scope="col">mail</th>
+     <th class = admin_user_content scope="col">status</th>
      <th></th>
-      <tr><% @users.each do |user| %>
+      <tr scope="col"><% @users.each do |user| %>
         <% if user.image.attached? %>
        <th scope="col"><%= image_tag user.image, size: "100x100" %></th>
         <% else %>
        <th scope="col"><%= image_tag 'no_image', size: "100x100" %></th>
         <% end %>
-       <th scope="col"><%= user.id %></th>
-       <th scope="col"><%= link_to admin_user_path(user.id) do %>
+       <th class = admin_user_contents scope="col"><%= user.id %></th>
+       <th class = admin_user_contents scope="col"><%= link_to admin_user_path(user.id) do %>
         <%= user.name %>
        <% end %>
        </th>
-       <th scope="col"><%= user.sex  %></th>
-       <th scope="col"><%= user.birthdate  %></th>
-       <th scope="col"><%= user.age  %></th>
-       <th scope="col"><%= user.email  %></th>
-       <th scope="col"><%= user.is_active  %></th>
-       <th scope="col"><%= link_to "詳細画面へ",admin_user_path(user.id) %></th>
+       <th class = admin_user_contents scope="col"><%= user.sex  %></th>
+       <th class = admin_user_contents scope="col"><%= user.birthdate  %></th>
+       <th class = admin_user_contents scope="col"><%= user.age  %></th>
+       <th class = admin_user_contents scope="col"><%= user.email  %></th>
+       <th class = admin_user_contents scope="col"><%= user.is_active  %></th>
+       <th class = admin_user_contents scope="col"><%= link_to "詳細画面へ",admin_user_path(user.id) %></th>
       </tr>
         <% end %>
    </thead>

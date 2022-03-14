@@ -1,3 +1,31 @@
 // Place all the styles related to the admin/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user_index{
+  color: white;
+  font-size: 35px;
+}
+
+.admin_user_content{
+  color: white;
+  font-size: 25px;
+}
+
+.admin_user_contents{
+  color: black;
+  font-size: 20px;
+  background-color: #ccc;
+  opacity: 0.8;
+}
+
+.user_show{
+  color: white;
+  font-size: 35px;
+}
+
+.user_show_content{
+  color: black;
+  font-size: 25px;
+  background-color: #ccc;
+  opacity: 0.8;
+}

@@ -1,17 +1,28 @@
-<h4>会員詳細画面</h4>
-<div>
-  <p>画像</p>
-   <% if @user.image.attached? %>
-    <%= image_tag @user.image, size: "100x100" %>
-   <% else %>
-    <%= image_tag 'no_image', size: "100x100" %>
-   <% end %>
-  <p>会員ID<%= @user.id %></p>
-  <p>名前<%= @user.name %></p>
-  <p>性別<%= @user.sex %>
-  <p>生年月日<%= @user.birthdate %></p>
-  <p>年齢<%= @user.age %></p>
-  <p>メールアドレス<%= @user.email %></p>
-  <p>会員ステータス<%= @user.is_active %></p>
-</div>
-<%= link_to "編集する",edit_admin_user_path(@user.id) %>
+<table class="table">
+ <thead>
+  <h2 class = user_show >会員詳細画面</h2>
+    <th class = user_show scope="col">user</th>
+    <th class = user_show scope="col">user_id</th>
+    <th class = user_show scope="col">name</th>
+    <th class = user_show scope="col">sex</th>
+    <th class = user_show scope="col">birthdate</th>
+    <th class = user_show scope="col">old</th>
+    <th class = user_show scope="col">mail</th>
+    <th class = user_show scope="col">status</th>
+     <tr>
+       <% if @user.image.attached? %>
+      <th scope="col"><%= image_tag @user.image, size: "100x100" %></th>
+       <% else %>
+      <th scope="col"><%= image_tag 'no_image', size: "100x100" %></th>
+       <% end %>
+       <th class = user_show_content scope="col"><%= @user.id %></th>
+       <th class = user_show_content scope="col"><%= @user.name %></th>
+       <th class = user_show_content scope="col"><%= @user.sex %></th>
+       <th class = user_show_content scope="col"><%= @user.birthdate %></th>
+       <th class = user_show_content scope="col"><%= @user.age %></th>
+       <th class = user_show_content scope="col"><%= @user.email %></th>
+       <th class = user_show_content scope="col"><%= @user.is_active %></th>
+       <th class = user_show_content scope="col"><%= link_to "編集する",edit_admin_user_path(@user.id) %></th>
+     </tr>
+ </thead>
+</table>
