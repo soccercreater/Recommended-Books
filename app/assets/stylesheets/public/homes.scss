@@ -5,9 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  color: #6c6b6b;
-}
+  box-sizing: border-box;}
 
 .home {
  background-image: image-url("book-image.jpeg");
@@ -30,17 +28,23 @@
 
 .top-about{
  background-image: image-url("book-image.jpeg");
- opacity: 0.8;
  background-size: cover;
  height: 100%;
  margin: 0 auto;
  line-height: 100px;
 }
 
-.about-text{
- color:white;
+.about-title{
+ color: white;
+ font-size: 25px;
 }
 
-.about-title{
-  color:orange;
+.about-text{
+  color: white;
+  font-size: 20px;
+}
+
+.about-text-span{
+    font-size: 25px;
+    color: #00FF00;
 }

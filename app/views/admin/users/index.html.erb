@@ -1,36 +1,57 @@
-<table class="table">
-  <thead>
-    <h4 class = user_index>会員一覧</h4>
-     <th class = admin_user_content scope="col">user</th>
-     <th class = admin_user_content scope="col">user_ID</th>
-     <th class = admin_user_content scope="col">name</th>
-     <th class = admin_user_content scope="col">sex</th>
-     <th class = admin_user_content scope="col">birthdate</th>
-     <th class = admin_user_content scope="col">age</th>
-     <th class = admin_user_content scope="col">mail</th>
-     <th class = admin_user_content scope="col">status</th>
-     <th></th>
-      <tr scope="col"><% @users.each do |user| %>
-        <% if user.image.attached? %>
-       <th scope="col"><%= image_tag user.image, size: "100x100" %></th>
-        <% else %>
-       <th scope="col"><%= image_tag 'no_image', size: "100x100" %></th>
+<div class = "top_admin_user">
+ <h4 class = "admin_user_index">
+  会員一覧
+ </h4>
+  <table class="table">
+   <tr>
+      <th class = "admin_user_content" scope="col">user</th>
+      <th class = "admin_user_content" scope="col">user_ID</th>
+      <th class = "admin_user_content" scope="col">name</th>
+      <th class = "admin_user_content" scope="col">sex</th>
+      <th class = "admin_user_content" scope="col">birthdate</th>
+      <th class = "admin_user_content" scope="col">age</th>
+      <th class = "admin_user_content" scope="col">mail</th>
+      <th class = "admin_user_content" scope="col">status</th>
+      <th></th>
+   </tr>
+     <% @users.each do |user| %>
+      <tr>
+       <td> <% if user.image.attached? %>
+        <%= image_tag user.image, size: "100x100" %>
+         <% else %>
+        <%= image_tag 'no_image', size: "100x100" %>
+         <% end %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= user.id %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= link_to admin_user_path(user.id) do %>
+         <%= user.name %>
         <% end %>
-       <th class = admin_user_contents scope="col"><%= user.id %></th>
-       <th class = admin_user_contents scope="col"><%= link_to admin_user_path(user.id) do %>
-        <%= user.name %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= user.sex %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= user.birthdate %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= user.age %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= user.email %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= user.is_active %>
+       </td>
+       <td class = "admin_user_index_content">
+        <%= link_to "詳細画面へ",admin_user_path(user.id) %>
+       </td>
        <% end %>
-       </th>
-       <th class = admin_user_contents scope="col"><%= user.sex  %></th>
-       <th class = admin_user_contents scope="col"><%= user.birthdate  %></th>
-       <th class = admin_user_contents scope="col"><%= user.age  %></th>
-       <th class = admin_user_contents scope="col"><%= user.email  %></th>
-       <th class = admin_user_contents scope="col"><%= user.is_active  %></th>
-       <th class = admin_user_contents scope="col"><%= link_to "詳細画面へ",admin_user_path(user.id) %></th>
       </tr>
-        <% end %>
-   </thead>
-  <tbody>
-  </tbody>
- </table>
- <%= paginate @users %>
+  </table>
+  <div class = "admin_page">
+   <%= paginate @users %>
+  </div>
+</div>

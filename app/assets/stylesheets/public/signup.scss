@@ -1,13 +1,14 @@
 .signup_title{
-  color: white;
+  color: black;
   font-size: 35px;
+  padding-left: 100px ;
  }
 
 .user_session_content{
   display: flex;
   justify-content: right;
   font-size: 25px;
-  color: white;
+  color: black;
 }
 
 .user_session_content_sub{
@@ -18,4 +19,64 @@
   display: flex;
   justify-content: center;
   height: 800px;
+  color: #00FF00;
+  font-size: 25px;
+}
+
+.signup_contents{
+  color: #00FF00;
+
+}
+
+.sign{
+ height: 1200pxpx;
+ background-image: image-url("book.jpg");
+ background-size: cover;
+}
+
+.top_login{
+ width: 100%;
+ height: 700px;
+ background-image: image-url("book.jpg");
+ background-size: cover;
+}
+
+.login_title{
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding-right: 50px;
+}
+
+.login_content{
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  padding-right: 50px;
+}
+
+.link_login{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+
+}
+
+.admin_top_login{
+ width: 100%;
+ height: 700px;
+ background-image: image-url("book.jpg");
+ background-size: cover;
+}
+
+.admin_login_title{
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.admin_login_content{
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
 }

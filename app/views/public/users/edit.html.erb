@@ -1,9 +1,9 @@
+<div class = ></div>
+  <h4 class = user_edit >会員情報編集</h4>
  <table class="table">
   <thead>
-   <h4 class = user_edit >会員情報編集</h4>
-    <th class = user_edit_content scope="col"><%= form_with model: @user,method: :patch, local:true do |f| %></th>
-    <%#= form_with(model: website, local: true, multipart: true,class:"foo") do |form| %>
 
+    <th class = user_edit_content scope="col"><%= form_with model: @user,method: :patch, local:true do |f| %></th>
      <p>画像</p>
      <% if @user.image.attached? %>
       <%= image_tag @user.image, size: "100x100" %>
