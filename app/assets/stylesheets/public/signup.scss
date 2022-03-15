@@ -1,3 +1,21 @@
-.signup1{
-  color: red;
+.signup_title{
+  color: white;
+  font-size: 35px;
  }
+
+.user_session_content{
+  display: flex;
+  justify-content: right;
+  font-size: 25px;
+  color: white;
+}
+
+.user_session_content_sub{
+  color: red;
+}
+
+.signup_content{
+  display: flex;
+  justify-content: center;
+  height: 800px;
+}

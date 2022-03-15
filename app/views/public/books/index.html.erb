@@ -1,12 +1,20 @@
-<h4 class = book_index>本一覧</h4>
+ <h4 class = "book-sarch" >読みたい本を検索する</h4>
+      <div class = "book-sarch" ><%= form_with method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword %>
+        <%= f.submit "検索" %>
+        <% end %>
+      </div><br>
+       <div class = "book-sarch" ><%= link_to "新規登録画面へ", new_book_path %></div>
+
+
+<h4 class = "book_index" >本一覧</h4>
  <% if @books.present? %>
   <table class="table">
-   <thead>
     <tr>
-     <th class = book_index scope="col">book_image</th>
-     <th class = book_index scope="col">id</th>
-     <th class = book_index scope="col">title</th>
-     <th class = book_index scope="col">author</th>
+     <th class = "book_index" scope="col">book_image</th>
+     <th class = "book_index" scope="col">id</th>
+     <th class = "book_index" scope="col">title</th>
+     <th class = "book_index" scope="col">author</th>
     </tr>
      <% @books.each do |book| %>
       <tr>
@@ -17,31 +25,22 @@
            <%= image_tag 'book', size: "150x150" %>
           <% end %>
         </td>
-        <td>
-         <%= link_to book_path(book.id) do %><br>
-          <%= book.id %><br>
+        <td class = "book_index_contents">
+         <%= link_to book_path(book.id) do %>
+          <%= book.id %>
          <% end %>
         </td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
+        <td class = "book_index_contents"><%= book.title %></td>
+        <td class = "book_index_contents"><%= book.author %></td>
       </tr>
       <% end %>
       <% else %>
        <p>検索結果はありません</p>
       <% end %>
    </table>
-
-
-      <h4>読みたい本を検索する</h4>
-      <%= form_with method: :get, local: true do |f| %>
-        <%= f.text_field :keyword, value: @keyword %>
-        <%= f.submit "検索" %>
-      <% end %>
-
-      <%= link_to "新規登録画面へ", new_book_path %>
-
-
+     <div class = "book_page">
       <%= paginate @books %>
+     </div>
 
 
 

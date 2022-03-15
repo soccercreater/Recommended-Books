@@ -1,7 +1,31 @@
 // Place all the styles related to the public/books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.book {
-    background-color: #yellow;
+.book_index {
+    color: white;
+    font-size: 35px;
+}
+
+.book_index_content{
+    color: white;
+    font-size: 25px;
+}
+
+.book_index_contents{
     color: black;
+    font-size: 20px;
+    background-color: #ccc;
+    opacity: 0.8;
+}
+
+.book_page{
+    font-size: 25px
+}
+
+.book-sarch{
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: right;
+    padding-right: 50px;
 }
