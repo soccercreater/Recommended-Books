@@ -14,7 +14,7 @@ class Public::BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    # @book_assessment = Assessment.where(params[:id])
+   # @book_assessment = Assessment.where(params[:id]
     @book_assessments = Assessment.where(book_id: @book.id)
 
   end
@@ -28,6 +28,12 @@ class Public::BooksController < ApplicationController
     @book.user_id = current_user.id
     @book.save!
     pp @book
+    redirect_to books_path
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
     redirect_to books_path
   end
 

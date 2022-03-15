@@ -53,10 +53,17 @@
 }
 
 .top_admin_user_edit{
- height: 680px;
+ height: 650px;
+ display: flex;
+ justify-content: center;
 }
 
 .admin_user_edit_title{
   color: white;
   font-size: 35px;
+}
+
+.admin_user_edit_content{
+ color: black;
+ font-size: 20px;
 }

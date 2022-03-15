@@ -56,6 +56,11 @@
                    <% end %>
                   </li>
                   <li class="nav-item">
+                   <%= link_to admin_books_path, class: 'nav-link text-dark' do %>
+                    <i class="fas fa-user"></i>登録本一覧
+                   <% end %>
+                  </li>
+                  <li class="nav-item">
                    <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
                     <i class="fas fa-sign-out-alt"></i> Log out
                    <% end %>

@@ -15,14 +15,6 @@ ActiveRecord::Base.transaction do
    user.save
    user.books.create!( title: 'team_geek', author: 'ヴィトン.サーフ')
    user.books.create!( title: 'ABCD', author: 'ヴィトン.サーフ')
-#  user = User.find_by
-#    [*(1..100)].each do |index|
-#       book = user.books.create!(title: index, author: index)
-#       book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{index}.jpeg")), filename: "#{index}.jpeg")
-#    end
-   # user.books.each.with_index(1) do |book, iiii|
-   #    book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{iiii}.jpg")))
-   # end
 
    user.books.each do |book|
       book.image.attach(io: File.open(Rails.root.join("app/assets/images/image_#{book.title}.jpeg")), filename: "#{book.title}.jpeg")
