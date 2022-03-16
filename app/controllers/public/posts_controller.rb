@@ -8,6 +8,7 @@ class Public::PostsController < ApplicationController
      current_user_post = Post.where(user_id: current_user.id)
      book_ids = current_user_post.pluck('book_id').uniq
      @books = Book.where(id: book_ids)
+     @books = Book.page(params[:page])
   end
 
   def create

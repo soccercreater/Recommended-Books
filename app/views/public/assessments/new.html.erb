@@ -1,9 +1,13 @@
-<h4>本に対するコメント</h4>
-   <%= form_with model: @assessment,id: 'new_assessment', class: 'new_assessment', local: true do |f| %>
-   <%= f.hidden_field :book_id, :value => @book.id %>
-  <h4>
-   <%= f.text_area :comment %>
-  <h4>
-   <%= f.submit "内容を保存" %>
-<% end %>
+<h4 class = "assessment_title">
+ 本に対するコメント
+</h4>
+  <div class = "top_assessment">
+     <%= form_with model: @assessment,id: 'new_assessment', class: 'new_assessment', local: true do |f| %>
+     <%= f.hidden_field :book_id, :value => @book.id %>
+    <h4>
+     <%= f.text_area :comment %>
+    <h4>
+     <%= f.submit "内容を保存" %>
+    <% end %>
+  </div>
 

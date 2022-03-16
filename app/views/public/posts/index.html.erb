@@ -1,20 +1,49 @@
-<% @books.each do |book| %>
- <% if book.image.attached? %><br>
-   <%= image_tag book.image, size: "150x150" %></th>
-  <% else %>
-   <%= image_tag 'book', size: "150x150" %></th>
-  <% end %><br>
-   <%= link_to book_path(book.id) do %>
-   ID<%= book.id %><br>
-   <% end %>
-   本のタイトル<%= book.title %><br>
-   本の著者<%= book.author %><br>
-   この本を選んだ理由<br>
-   <% book.posts.each do |book_post| %>
-    <%= book_post.reason %>
-    <%= link_to "編集", edit_post_path(book_post.id) %>
-    <%= link_to "削除", destroy_post_path(book_post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-   <% end %>
-   <%= link_to "コメントを書く", new_assessment_path(book_id: book.id) %>
-<% end %>
-
+<div class= "top_post_index">
+  <table class="table">
+   <tr>
+    <th class= "post_index_content"></th>
+    <th class= "post_index_content">id</th>
+    <th class= "post_index_content">book title</th>
+    <th class= "post_index_content">author</th>
+    <th class= "post_index_content">select reason</th>
+    <th class= "post_index_content"></th>
+    <th class= "post_index_content"></th>
+    <th class= "post_index_content"></th>
+   </tr>
+    <% @books.each do |book| %>
+     <tr>
+      <td class= "post_index_contents">
+       <% if book.image.attached? %>
+        <%= image_tag book.image, size: "150x150" %>
+       <% else %>
+        <%= image_tag 'book', size: "150x150" %>
+       <% end %>
+      </td>
+      <td class= "post_index_contents">
+       <%= link_to book_path(book.id) do %>
+        <%= book.id %>
+       <% end %>
+      </td>
+      <td class= "post_index_contents">
+       <%= book.title %>
+      </td>
+      <td class= "post_index_contents">
+       <%= book.author %>
+      </td class= "post_index_contents">
+       <% book.posts.each do |book_post| %>
+        <td class= "post_index_contents">
+         <%= book_post.reason %>
+        </td>
+        <td class= "post_index_contents">
+         <%= link_to "編集", edit_post_path(book_post.id) %>
+         <%= link_to "削除", destroy_post_path(book_post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+          <% end %>
+         <%= link_to "コメントを書く", new_assessment_path(book_id: book.id) %>
+        </td>
+       <% end %>
+     </tr>
+  </table>
+</div>
+<div class = "post_index_page">
+ <%= paginate @books %>
+</div>

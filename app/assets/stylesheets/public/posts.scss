@@ -1,3 +1,48 @@
 // Place all the styles related to the public/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user_post_new{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 150px;
+  color: black;
+  font-size: 25px;
+}
+
+.top_user_post_title{
+  font-size: 30px;
+  color: white;
+  padding-left: 100px;
+  padding-top: 100px;
+}
+
+.top_post_edit{
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.post_edit_title{
+  font-size: 25px;
+  color: white;
+}
+
+.top_post_index{
+  height: 750px;
+}
+
+.post_index_content{
+  font-size: 25px;
+  color: white;
+}
+
+.post_index_contents{
+  font-size: 25px;
+  color: black;
+}
+
+.post_index_page{
+font-size: 25px;
+}

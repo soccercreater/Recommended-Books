@@ -8,8 +8,12 @@
   これまでの投稿が閲覧できなくなります。<br><br>
   退会する場合は、<span class = "unsubscribe_text_span">「退会する」</span>をクリックしてください。
   </h4>
-  <div class="actions">
-   <p class = "unsubscribe_link"><%= link_to "退会する", withdraw_path, method: :patch %></p>
-   <%= link_to "退会しない",  my_page_path %>
-  </div>
 </div>
+  <div class="actions">
+   <div class = "unsubscribe_link">
+    <%= link_to "退会する", withdraw_path, method: :patch %>
+   </div>
+   <div class = "unsubscribe_link">
+    <%= link_to "退会しない",  my_page_path %>
+   </div>
+  </div>
