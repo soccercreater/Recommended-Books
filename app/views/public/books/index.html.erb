@@ -10,7 +10,9 @@
          <% end %>
        </div>
         <div class = "book-sarch" >
-         <%= link_to "新しく本を投稿する", new_book_path %>
+         <% if user_signed_in? %>
+          <%= link_to "新しく本を投稿する", new_book_path %>
+         <% end %>
         </div>
 
 
