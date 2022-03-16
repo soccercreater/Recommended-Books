@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .book_index {
     color: white;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .book_index_content{
@@ -22,8 +22,12 @@
     font-size: 25px
 }
 
+.sarch_layout{
+    height: 550px;
+}
+
 .book-sarch{
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     display: flex;
     justify-content: right;
@@ -58,3 +62,6 @@
     font-size: 25px;
 }
 
+.top_book_layout{
+    height: 950px;
+}

@@ -1,3 +1,28 @@
 // Place all the styles related to the admin/books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.top_admin_layout{
+  height: 950px;
+}
+.admin_book_sarch_title{
+   font-size: 20px;
+   color: white;
+}
+
+.admin_book_layout{
+  height: 550px;
+}
+
+.admin_book_index{
+  color: white;
+  font-size: 25px;
+}
+
+.admin_book_index_contents{
+  color: black;
+  font-size: 30px;
+}
+
+.admin_book_page{
+  font-size: 20px;
+}

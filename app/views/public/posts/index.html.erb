@@ -37,8 +37,8 @@
         <td class= "post_index_contents">
          <%= link_to "編集", edit_post_path(book_post.id) %>
          <%= link_to "削除", destroy_post_path(book_post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-          <% end %>
          <%= link_to "コメントを書く", new_assessment_path(book_id: book.id) %>
+          <% end %>
         </td>
        <% end %>
      </tr>
