@@ -1,32 +1,34 @@
 <div class = "top_mypage">
-<h4 class = "mypage_title">マイページ</h4>
- <table class="table">
-   <thead>
-      <th class = "mypage_content" scope="col">user</th>
-      <th class = "mypage_content" scope="col">name</th>
-      <th class = "mypage_content" scope="col">sex</th>
-      <th class = "mypage_content" scope="col">birthdate</th>
-      <th class = "mypage_content" scope="col">age</th>
-      <th class = "mypage_content" scope="col">mail</th>
-      <th class = "mypage_content" scope="col">status</th>
-      <th></th>
-       <tr>
-        <% if @user.image.attached? %>
-        <th scope="col"><%= image_tag @user.image, size: "150x150" %></th>
-         <% else %>
-        <th scope="col"><%= image_tag 'no_image', size: "150x150" %></th>
-         <% end %>
-        <th class = "mypage_content_sub" scope="col"><%= @user.name %></th>
-        <th class = "mypage_content_sub" scope="col"><%= @user.sex %></th>
-        <th class = "mypage_content_sub" scope="col"><%= @user.birthdate %></th>
-        <th class = "mypage_content_sub" scope="col"><%= @user.age %></th>
-        <th class = "mypage_content_sub" scope="col"><%= @user.email %></th>
-        <th class = "mypage_content_sub" scope="col"><%= @user.is_active %></th>
-        <th class = "mypage_content_sub" scope="col"><%= link_to "編集する",edit_user_path(@user.id) %></th>
-       </tr>
-    </thead>
-   <tbody>
-   </tbody>
+ <h2 class = "mypage_title">マイページ</h2>
+  <table class="table">
+   <tr>
+    <th class = "mypage_content" scope="col">user</th>
+    <th class = "mypage_content" scope="col">name</th>
+    <th class = "mypage_content" scope="col">sex</th>
+    <th class = "mypage_content" scope="col">birthdate</th>
+    <th class = "mypage_content" scope="col">age</th>
+    <th class = "mypage_content" scope="col">mail</th>
+    <th class = "mypage_content" scope="col">status</th>
+    <th></th>
+   </tr>
+    <tr>
+     <td>
+      <% if @user.image.attached? %>
+       <%= image_tag @user.image, size: "250x250" %>
+      <% else %>
+       <%= image_tag 'no_image', size: "250x250" %>
+      <% end %>
+     </td>
+     <td class = "mypage_content_sub" scope="col"><%= @user.name %></td>
+     <td class = "mypage_content_sub" scope="col"><%= @user.sex %></td>
+     <td class = "mypage_content_sub" scope="col"><%= @user.birthdate %></td>
+     <td class = "mypage_content_sub" scope="col"><%= @user.age %></td>
+     <td class = "mypage_content_sub" scope="col"><%= @user.email %></td>
+     <td class = "mypage_content_sub" scope="col"><%= @user.is_active %></td>
+     <td class = "mypage_content_sub" scope="col">
+      <%= link_to "編集する",edit_user_path(@user.id) %>
+     </td>
+    </tr>
   </table>
 </div>
 
