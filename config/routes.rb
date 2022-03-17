@@ -33,8 +33,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "/homes#top"
-    resources :users, only: [:show, :update, :index, :edit]
-    resources :books, only: [:show, :new, :index, :edit]
+    resources :users, only: [:show, :update, :index, :edit, :create]
+    resources :books, only: [:show, :new, :index, :edit, :update, :create]
     delete "/books/:id/destroy" => "books#destroy", as: "destroy"
     delete "/books/destroy_all" => "books#destroy_all", as: "destroy_all"
   end

@@ -26,6 +26,5 @@
     </td>
  </table>
 </div>
-<%= link_to "一覧画面へ", books_path %><br>
-<%= link_to "読みたい本として登録する", new_post_path(book_id: @book.id) %><br>
+<%= link_to "一覧画面へ", admin_books_path %><br>
 <%= link_to "登録を削除する", destroy_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

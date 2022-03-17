@@ -1,11 +1,13 @@
-<%= form_with model: @book, url:books_path,  local:true do |f| %>
-   <h4>book_image</h4>
-  <%= f.file_field :image, accept: "image/*" %>
-   <h4>title</h4>
-  <%= f.text_field :title %>
-   <h4>author</h4>
-  <%= f.text_field :author %>
-  <h4></h4>
-  <%= f.submit '登録' %>
-<% end %>
+<div class = "admin_book_new">
+ <%= form_with model: @book, url:admin_books_path,  local:true do |f| %>
+    <h4>book_image</h4>
+     <%= f.file_field :image, accept: "image/*" %>
+    <h4>title</h4>
+     <%= f.text_field :title %>
+    <h4>author</h4>
+     <%= f.text_field :author %>
+   <h4></h4>
+     <%= f.submit '登録' %>
+ <% end %>
+</div>
 
