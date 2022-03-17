@@ -6,7 +6,7 @@
     <% if @user.image.attached? %>
      <%= image_tag @user.image, size: "100x100" %>
     <% else %>
-     <%= image_tag 'no_image', size: "100x100" %>
+     <%= image_tag "no_image.jpg" %>
     <% end %><br>
      <%= f.file_field :image, placeholder: "プロフィール画像", accept: "image/*" %>
     <h4 class = "user_edit_content">user</h4>
