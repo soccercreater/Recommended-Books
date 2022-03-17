@@ -18,7 +18,7 @@
      <% if @user.image.attached? %>
       <%= image_tag @user.image, size: "100x100" %>
        <% else %>
-      <%= image_tag asset_path("/no_image.jpg") %>
+      <%= image_tag asset_path("/images/no_image.jpg") %>
        <% end %>
     </td>
     <td class = "admin_user_show_contents" >
