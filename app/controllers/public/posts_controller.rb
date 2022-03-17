@@ -5,10 +5,8 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-     current_user_post = Post.where(user_id: current_user.id)
-     book_ids = current_user_post.pluck('book_id').uniq
-     @books = Book.where(id: book_ids)
-     @books = Book.page(params[:page])
+     book_ids = Post.where(user_id: current_user.id).pluck('book_id')
+     @books = Book.where(id: book_ids).page(params[:page])
   end
 
   def create
