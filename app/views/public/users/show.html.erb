@@ -16,7 +16,7 @@
       <% if @user.image.attached? %>
        <%= image_tag @user.image, size: "250x250" %>
       <% else %>
-       <%= image_tag asset_path("no_image") %>
+       <%= image_tag('no_image.jpg') %>
       <% end %>
      </td>
      <td class = "mypage_content_sub" scope="col"><%= @user.name %></td>
