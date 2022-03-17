@@ -21,7 +21,9 @@
     <td class = book_show_content_comment scope="col">
      <% @book_assessments.each do |assessment| %>
       <%= assessment.comment %>
-      <%= link_to "削除", destroy_assessment_path(assessment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %><br>
+       <% if user_signed_in? && assessment.user.id == current_user.id %>
+        <%= link_to "削除", destroy_assessment_path(assessment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %><br>
+       <% end %>
      <% end %>
     </td>
  </table>
