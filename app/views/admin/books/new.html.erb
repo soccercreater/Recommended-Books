@@ -1,5 +1,5 @@
 <div class = "admin_book_new">
- <%= form_with model: @book, url:admin_books_path,  local:true do |f| %>
+ <%= form_with model: @book, url:admin_books_path, local:true do |f| %>
     <h4>book_image</h4>
      <%= f.file_field :image, accept: "image/*" %>
     <h4>title</h4>
