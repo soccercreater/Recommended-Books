@@ -65,3 +65,14 @@
 .top_book_layout{
     height: 950px;
 }
+
+.thumbnail{
+		height: 150px;
+		width: 150px;
+		object-fit: cover; // 縦横比を保って表示」
+	}
+
+.error_messages{
+    color: red;
+    font-size: 30px;
+}

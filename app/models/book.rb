@@ -8,6 +8,8 @@ class Book < ApplicationRecord
 
     has_one_attached :image
 
+     validates :title, presence: true
+
     def self.search(keyword)
      where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
     end

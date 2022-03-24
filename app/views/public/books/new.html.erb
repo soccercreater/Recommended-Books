@@ -1,3 +1,14 @@
+<div class = "error_messages">
+ <% if @book.errors.any? %>
+   <%= @book.errors.count %>件のエラーが発生しました
+   <ul>
+     <% @book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+ <% end %>
+</div>
+
 <div class = "user_book_new">
  <%= form_with model: @book, url:books_path,  local:true do |f| %>
   <h4>book_image</h4>
@@ -10,4 +21,5 @@
    <%= f.submit '登録' %>
  <% end %>
 </div>
+
 
