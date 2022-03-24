@@ -1,2 +1,47 @@
-<h1>Public::Books#edit</h1>
-<p>Find me in app/views/public/books/edit.html.erb</p>
+<div class = "top_book_edit_title">
+  編集画面
+</div>
+ <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+   <div class = "top_book_show">
+   <table class="table">
+    <tr>
+     <th class = book_show_content scope="col"></th>
+     <th class = book_show_content scope="col">ID</th>
+     <th class = book_show_content scope="col">本のタイトル</th>
+     <th class = book_show_content scope="col">本の著者</th>
+     <th class = book_show_content scope="col">本のコメント</th>
+    </tr>
+     <tr>
+      <td class = book_show_content_sub scope="col">
+       <% if @book.image.attached? %>
+        <%= image_tag @book.image, size: "250x250" %>
+       <% else %>
+        <%= image_tag 'book', size: "250x250" %>
+       <% end %>
+      </td>
+      <td class = book_show_content_sub scope="col">
+        <%= @book.id %>
+      </td>
+      <td class = book_show_content_sub scope="col">
+        <%= f.text_field :title %>
+      </td>
+      <td class = book_show_content_sub scope="col">
+       <%= f.text_field :author %>
+      </td>
+      <td class = book_show_content_comment scope="col">
+       <% @book_assessments.each do |assessment| %>
+        <%= assessment.comment %>
+         <% if user_signed_in? && assessment.user.id == current_user.id %>
+          <%= link_to "削除", destroy_assessment_path(assessment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %><br>
+         <% elsif user_signed_in? %>
+          <%= assessment.comment %>
+         <% else %>
+          <%= assessment.comment %>
+         <% end %>
+       <% end %>
+      </td>
+     </table>
+   <%= f.submit '保存' %>
+ <% end %>
+</div>
+
